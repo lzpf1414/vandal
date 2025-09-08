@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vandal ext | dsc.gg/vandal1337</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #0a0a0a;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Container styling */
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Image pushback */
+.container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.1s ease;
+    pointer-events: none;
+}
+
+/* Buttons horizontal */
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 2px solid #555;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: rgba(70, 70, 70, 0.9);
+    transform: translateY(-5px);
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-content ul li {
+    margin: 10px 0;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+
+/* Tooltip text */
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 6px 8px;
+    border-radius: 5px;
+    font-size: 13px;
+    position: absolute;
+    z-index: 20;
+    bottom: 120%; /* Show above the text */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border: 1px solid #444;
+    pointer-events: none;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* bottom of tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #111 transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.payment-buttons .btn {
+    width: 80%;
+    margin: 5px auto;
+    display: block;
+    text-align: center;
+}
+
+.more-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Falling stars animation */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from { transform: translateY(-10px); opacity: 0.8; }
+    to { transform: translateY(110vh); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <img id="mainImage" src="https://i.postimg.cc/MZbWg1Lk/image-1.png" alt="Main Image">
+    <div class="button-row">
+        <button class="btn" onclick="window.open('https://discord.gg/P8feNZwNmz','_blank')">Join Our Discord</button>
+        <button class="btn" onclick="openModal('featuresModal')">Features</button>
+        <button class="btn" onclick="openModal('purchaseModal')">Purchase</button>
+    </div>
+</div>
+
+<!-- Features Modal -->
+<div class="modal" id="featuresModal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('featuresModal')">&times;</span>
+        <h2>Features</h2>
+        <ul>
+            <li class="tooltip">SilentAim
+                <span class="tooltip-text">Automatically hits targets without aiming directly at them.</span>
+            </li>
+            <li class="tooltip">Aimbot
+                <span class="tooltip-text">Locks your crosshair onto enemies for perfect aim.</span>
+            </li>
+            <li class="tooltip">Triggerbot
+                <span class="tooltip-text">Shoots automatically when your crosshair is on an enemy.</span>
+            </li>
+            <li class="tooltip">Visuals
+                <span class="tooltip-text">ESP, wallhacks, and overlays to see players/items.</span>
+            </li>
+            <li class="tooltip">Rapidfire (Beta)
+                <span class="tooltip-text">Makes your weapon shoot faster than normal.</span>
+            </li>
+            <li class="tooltip">AntiAim
+                <span class="tooltip-text">Breaks enemy aim and makes you harder to hit.</span>
+            </li>
+            <li class="tooltip">Configurations
+                <span class="tooltip-text">Save and load your custom cheat settings.</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Purchase Modal -->
+<div class="modal" id="purchaseModal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('purchaseModal')">&times;</span>
+        <h2>Payment Methods</h2>
+        <hr style="margin: 10px 0; border-color: #555;">
+        <div class="payment-buttons">
+            <button class="btn" onclick="window.open('https://www.roblox.com/game-pass/1452708598/license','_blank')">800 Robux</button>
+            <button class="btn" onclick="window.open('https://www.paypal.com/paypalme/vandal1337v2/3','_blank')">PayPal 3€</button>
+        </div>
+        <hr style="margin: 15px 0; border-color: #555;">
+        <div class="more-text">More payment methods soon</div>
+    </div>
+</div>
+
+<script>
+// Updated modal functionality
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'flex';
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+window.onclick = function(e) {
+    if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+    }
+}
+
+// Falling stars
+const starCount = 80;
+for(let i=0;i<starCount;i++){
+    let star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random()*window.innerWidth+'px';
+    star.style.top = Math.random()*window.innerHeight+'px';
+    star.style.width = star.style.height = Math.random()*2+1+'px';
+    star.style.animationDuration = 2+Math.random()*3+'s';
+    document.body.appendChild(star);
+}
+
+// Pushback effect on image
+const image = document.getElementById('mainImage');
+const container = document.querySelector('.container');
+
+container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width/2;
+    const y = e.clientY - rect.top - rect.height/2;
+    const moveX = -x * 0.02;
+    const moveY = -y * 0.02;
+    image.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+});
+
+container.addEventListener('mouseleave', () => {
+    image.style.transform = 'translate(0,0) scale(1)';
+});
+</script>
+
+</body>
+</html>
