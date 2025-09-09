@@ -51,25 +51,33 @@
             background: radial-gradient(ellipse at top, #0f0f0f 0%, var(--darker-bg) 50%);
         }
 
-        .bg-animation::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(53, 122, 189, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
-            animation: backgroundShift 20s ease-in-out infinite;
-        }
+            .bg-animation::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(53, 122, 189, 0.05) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+                animation: backgroundShift 20s ease-in-out infinite;
+            }
 
         @keyframes backgroundShift {
-            0%, 100% { transform: translateX(0) translateY(0); }
-            25% { transform: translateX(-2%) translateY(-1%); }
-            50% { transform: translateX(1%) translateY(-2%); }
-            75% { transform: translateX(-1%) translateY(1%); }
+            0%, 100% {
+                transform: translateX(0) translateY(0);
+            }
+
+            25% {
+                transform: translateX(-2%) translateY(-1%);
+            }
+
+            50% {
+                transform: translateX(1%) translateY(-2%);
+            }
+
+            75% {
+                transform: translateX(-1%) translateY(1%);
+            }
         }
 
         /* Floating Particles */
@@ -88,12 +96,15 @@
                 transform: translateY(100vh) translateX(0) rotate(0deg);
                 opacity: 0;
             }
+
             10% {
                 opacity: 0.4;
             }
+
             90% {
                 opacity: 0.4;
             }
+
             100% {
                 transform: translateY(-100px) translateX(100px) rotate(360deg);
                 opacity: 0;
@@ -147,19 +158,19 @@
             border-right: 1px solid var(--border-color);
         }
 
-        .tab-button:last-child {
-            border-right: none;
-        }
+            .tab-button:last-child {
+                border-right: none;
+            }
 
-        .tab-button.active {
-            background: var(--primary-color);
-            color: white;
-        }
+            .tab-button.active {
+                background: var(--primary-color);
+                color: white;
+            }
 
-        .tab-button:hover:not(.active) {
-            background: rgba(74, 144, 226, 0.1);
-            color: var(--text-primary);
-        }
+            .tab-button:hover:not(.active) {
+                background: rgba(74, 144, 226, 0.1);
+                color: var(--text-primary);
+            }
 
         .tab-content {
             display: none;
@@ -167,9 +178,9 @@
             text-align: center;
         }
 
-        .tab-content.active {
-            display: block;
-        }
+            .tab-content.active {
+                display: block;
+            }
 
         .tab-image {
             width: 100%;
@@ -180,10 +191,10 @@
             transition: all 0.3s ease;
         }
 
-        .tab-image:hover {
-            transform: scale(1.02);
-            box-shadow: var(--shadow-xl);
-        }
+            .tab-image:hover {
+                transform: scale(1.02);
+                box-shadow: var(--shadow-xl);
+            }
 
         /* Header */
         .header {
@@ -209,34 +220,44 @@
             overflow: hidden;
         }
 
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 20px;
-        }
+            .logo img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 20px;
+            }
 
-        .logo::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s;
-            opacity: 0;
-        }
+            .logo::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+                transform: rotate(45deg);
+                transition: all 0.6s;
+                opacity: 0;
+            }
 
-        .logo:hover::before {
-            animation: shine 0.6s ease-in-out;
-        }
+            .logo:hover::before {
+                animation: shine 0.6s ease-in-out;
+            }
 
         @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+                opacity: 0;
+            }
         }
 
         .logo:hover {
@@ -253,30 +274,19 @@
             background-clip: text;
             margin-bottom: 0.5rem;
             animation: fadeInUp 1s ease-out 0.2s both, pulse 3s ease-in-out infinite;
-            filter: 
-                drop-shadow(0 0 5px rgba(59, 130, 246, 0.8))
-                drop-shadow(0 0 10px rgba(59, 130, 246, 0.6))
-                drop-shadow(0 0 20px rgba(59, 130, 246, 0.4))
-                drop-shadow(0 0 40px rgba(59, 130, 246, 0.2));
+            filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 10px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 20px rgba(59, 130, 246, 0.4)) drop-shadow(0 0 40px rgba(59, 130, 246, 0.2));
             position: relative;
         }
 
         @keyframes pulse {
-            0%, 100% { 
+            0%, 100% {
                 transform: scale(1);
-                filter: 
-                    drop-shadow(0 0 5px rgba(59, 130, 246, 0.8))
-                    drop-shadow(0 0 10px rgba(59, 130, 246, 0.6))
-                    drop-shadow(0 0 20px rgba(59, 130, 246, 0.4))
-                    drop-shadow(0 0 40px rgba(59, 130, 246, 0.2));
+                filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 10px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 20px rgba(59, 130, 246, 0.4)) drop-shadow(0 0 40px rgba(59, 130, 246, 0.2));
             }
-            50% { 
+
+            50% {
                 transform: scale(1.02);
-                filter: 
-                    drop-shadow(0 0 8px rgba(59, 130, 246, 1))
-                    drop-shadow(0 0 15px rgba(59, 130, 246, 0.8))
-                    drop-shadow(0 0 30px rgba(59, 130, 246, 0.6))
-                    drop-shadow(0 0 60px rgba(59, 130, 246, 0.4));
+                filter: drop-shadow(0 0 8px rgba(59, 130, 246, 1)) drop-shadow(0 0 15px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 30px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 60px rgba(59, 130, 246, 0.4));
             }
         }
 
@@ -318,31 +328,31 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s;
-        }
+            .btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+                transition: left 0.5s;
+            }
 
-        .btn:hover::before {
-            left: 100%;
-        }
+            .btn:hover::before {
+                left: 100%;
+            }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
-            border-color: #444444;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
+            .btn:hover {
+                transform: translateY(-3px);
+                background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+                border-color: #444444;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            }
 
-        .btn:active {
-            transform: translateY(-1px);
-        }
+            .btn:active {
+                transform: translateY(-1px);
+            }
 
         .btn-secondary {
             background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
@@ -350,11 +360,11 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .btn-secondary:hover {
-            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
-            border-color: #444444;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
+            .btn-secondary:hover {
+                background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+                border-color: #444444;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            }
 
         .btn-accent {
             background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
@@ -362,11 +372,11 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .btn-accent:hover {
-            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
-            border-color: #444444;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
+            .btn-accent:hover {
+                background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+                border-color: #444444;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            }
 
         /* Modal Styling */
         .modal {
@@ -401,15 +411,15 @@
             animation: slideInUp 0.3s ease;
         }
 
-        .modal-content h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+            .modal-content h2 {
+                font-size: 2rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                background: var(--gradient-primary);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
 
         .close-btn {
             position: absolute;
@@ -428,10 +438,10 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        .close-btn:hover {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.2);
-        }
+            .close-btn:hover {
+                color: var(--text-primary);
+                background: rgba(255, 255, 255, 0.2);
+            }
 
         /* Features Dropdown System */
         .features-container {
@@ -448,10 +458,10 @@
             transition: all 0.3s ease;
         }
 
-        .feature-dropdown:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--primary-color);
-        }
+            .feature-dropdown:hover {
+                background: rgba(255, 255, 255, 0.08);
+                border-color: var(--primary-color);
+            }
 
         .feature-header {
             padding: 1rem 1.5rem;
@@ -470,18 +480,18 @@
             position: relative;
         }
 
-        .feature-header::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            border: 2px solid white;
-            border-radius: 50%;
-            background: transparent;
-            transition: all 0.3s ease;
-            box-shadow: none;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
+            .feature-header::before {
+                content: '';
+                width: 12px;
+                height: 12px;
+                border: 2px solid white;
+                border-radius: 50%;
+                background: transparent;
+                transition: all 0.3s ease;
+                box-shadow: none;
+                margin-right: 12px;
+                flex-shrink: 0;
+            }
 
         .feature-dropdown.active .feature-header::before {
             background: white;
@@ -492,9 +502,9 @@
             background: rgba(74, 144, 226, 0.1);
         }
 
-        .feature-header:hover::before {
-            border-color: rgba(255, 255, 255, 0.8);
-        }
+            .feature-header:hover::before {
+                border-color: rgba(255, 255, 255, 0.8);
+            }
 
         .feature-header.active {
             background: rgba(74, 144, 226, 0.2);
@@ -578,23 +588,23 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .payment-btn:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
-            border-color: #444444;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
+            .payment-btn:hover {
+                transform: translateY(-2px);
+                background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+                border-color: #444444;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            }
 
-        .payment-btn.paypal {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
-            border: 1px solid #333333;
-        }
+            .payment-btn.paypal {
+                background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+                border: 1px solid #333333;
+            }
 
-        .payment-btn.paypal:hover {
-            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
-            border-color: #444444;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
+                .payment-btn.paypal:hover {
+                    background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+                    border-color: #444444;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+                }
 
         .more-text {
             margin-top: 1.5rem;
@@ -605,8 +615,13 @@
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes fadeInUp {
@@ -614,6 +629,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -625,6 +641,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -701,7 +718,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* Status Indicators */
@@ -723,9 +742,17 @@
         }
 
         @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -772,7 +799,11 @@
                 <i class="fab fa-discord"></i>
                 Join Discord
             </a>
-            <button class="btn btn-accent" onclick="openModal('purchaseModal')">
+            <a href="vandal-free demo.zip" download="VandalExt.zip" class="btn btn-accent">
+                <i class="fas fa-download"></i>
+                Download
+            </a>
+            <button class="btn btn-secondary" onclick="openModal('purchaseModal')">
                 <i class="fas fa-shopping-cart"></i>
                 Purchase
             </button>
@@ -892,7 +923,7 @@
             // Remove active class from all tabs and buttons
             document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            
+
             // Add active class to selected tab and button
             document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
             document.getElementById(`${tabName}-tab`).classList.add('active');
@@ -902,13 +933,13 @@
         function toggleFeature(header) {
             const dropdown = header.parentElement;
             const isActive = dropdown.classList.contains('active');
-            
+
             // Close all other dropdowns
             document.querySelectorAll('.feature-dropdown').forEach(dd => {
                 dd.classList.remove('active');
                 dd.querySelector('.feature-header').classList.remove('active');
             });
-            
+
             // Toggle current dropdown
             if (!isActive) {
                 dropdown.classList.add('active');
@@ -921,7 +952,7 @@
             const modal = document.getElementById(modalId);
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
-            
+
             // Add entrance animation
             const content = modal.querySelector('.modal-content');
             content.style.animation = 'slideInUp 0.3s ease';
@@ -934,7 +965,7 @@
         }
 
         // Close modal when clicking outside
-        window.onclick = function(e) {
+        window.onclick = function (e) {
             if (e.target.classList.contains('modal')) {
                 e.target.style.display = 'none';
                 document.body.style.overflow = 'auto';
@@ -942,7 +973,7 @@
         }
 
         // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 const modals = document.querySelectorAll('.modal');
                 modals.forEach(modal => {
@@ -963,13 +994,13 @@
             particle.style.width = particle.style.height = (Math.random() * 3 + 2) + 'px';
             particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
             particle.style.animationDelay = Math.random() * 5 + 's';
-            
+
             // Random colors
             const colors = ['#4a90e2', '#357abd', '#10b981', '#f59e0b'];
             particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-            
+
             document.body.appendChild(particle);
-            
+
             // Remove particle after animation
             setTimeout(() => {
                 if (particle.parentNode) {
@@ -988,12 +1019,12 @@
 
         // Add loading states to buttons
         document.querySelectorAll('.btn, .payment-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+            btn.addEventListener('click', function (e) {
                 if (this.href && !this.href.includes('#')) {
                     const originalText = this.innerHTML;
                     this.innerHTML = '<div class="loading"></div> Loading...';
                     this.style.pointerEvents = 'none';
-                    
+
                     setTimeout(() => {
                         this.innerHTML = originalText;
                         this.style.pointerEvents = 'auto';
