@@ -8,22 +8,22 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #6366f1;
-            --primary-dark: #4f46e5;
+            --primary-color: #4a90e2;
+            --primary-dark: #357abd;
             --secondary-color: #10b981;
             --accent-color: #f59e0b;
             --danger-color: #ef4444;
-            --dark-bg: #0f0f23;
-            --darker-bg: #0a0a1a;
-            --card-bg: #1a1a2e;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #050505;
+            --card-bg: #111111;
             --text-primary: #ffffff;
-            --text-secondary: #a1a1aa;
-            --text-muted: #71717a;
-            --border-color: #27272a;
-            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            --text-secondary: #888888;
+            --text-muted: #555555;
+            --border-color: #222222;
+            --gradient-primary: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
             --gradient-secondary: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --shadow-xl: 0 35px 60px -12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 35px 60px -12px rgba(0, 0, 0, 0.6);
         }
 
         * {
@@ -48,28 +48,36 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: radial-gradient(ellipse at top, #1e1b4b 0%, var(--darker-bg) 50%);
+            background: radial-gradient(ellipse at top, #0f0f0f 0%, var(--darker-bg) 50%);
         }
 
-        .bg-animation::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
-            animation: backgroundShift 20s ease-in-out infinite;
-        }
+            .bg-animation::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(53, 122, 189, 0.05) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+                animation: backgroundShift 20s ease-in-out infinite;
+            }
 
         @keyframes backgroundShift {
-            0%, 100% { transform: translateX(0) translateY(0); }
-            25% { transform: translateX(-2%) translateY(-1%); }
-            50% { transform: translateX(1%) translateY(-2%); }
-            75% { transform: translateX(-1%) translateY(1%); }
+            0%, 100% {
+                transform: translateX(0) translateY(0);
+            }
+
+            25% {
+                transform: translateX(-2%) translateY(-1%);
+            }
+
+            50% {
+                transform: translateX(1%) translateY(-2%);
+            }
+
+            75% {
+                transform: translateX(-1%) translateY(1%);
+            }
         }
 
         /* Floating Particles */
@@ -79,7 +87,7 @@
             height: 4px;
             background: var(--primary-color);
             border-radius: 50%;
-            opacity: 0.6;
+            opacity: 0.4;
             animation: float 15s linear infinite;
         }
 
@@ -88,12 +96,15 @@
                 transform: translateY(100vh) translateX(0) rotate(0deg);
                 opacity: 0;
             }
+
             10% {
-                opacity: 0.6;
+                opacity: 0.4;
             }
+
             90% {
-                opacity: 0.6;
+                opacity: 0.4;
             }
+
             100% {
                 transform: translateY(-100px) translateX(100px) rotate(360deg);
                 opacity: 0;
@@ -114,6 +125,76 @@
             justify-content: center;
             align-items: center;
         }
+
+        /* Tab System */
+        .tab-system {
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tab-header {
+            display: flex;
+            background: var(--darker-bg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 12px 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            border-right: 1px solid var(--border-color);
+        }
+
+            .tab-button:last-child {
+                border-right: none;
+            }
+
+            .tab-button.active {
+                background: var(--primary-color);
+                color: white;
+            }
+
+            .tab-button:hover:not(.active) {
+                background: rgba(74, 144, 226, 0.1);
+                color: var(--text-primary);
+            }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+
+            .tab-content.active {
+                display: block;
+            }
+
+        .tab-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+        }
+
+            .tab-image:hover {
+                transform: scale(1.02);
+                box-shadow: var(--shadow-xl);
+            }
 
         /* Header */
         .header {
@@ -139,27 +220,44 @@
             overflow: hidden;
         }
 
-        .logo::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s;
-            opacity: 0;
-        }
+            .logo img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 20px;
+            }
 
-        .logo:hover::before {
-            animation: shine 0.6s ease-in-out;
-        }
+            .logo::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+                transform: rotate(45deg);
+                transition: all 0.6s;
+                opacity: 0;
+            }
+
+            .logo:hover::before {
+                animation: shine 0.6s ease-in-out;
+            }
 
         @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+                opacity: 0;
+            }
         }
 
         .logo:hover {
@@ -185,42 +283,6 @@
             animation: fadeInUp 1s ease-out 0.4s both;
         }
 
-        /* Main Image */
-        .main-image {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 20px;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-xl);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .main-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1;
-        }
-
-        .main-image:hover::before {
-            opacity: 0.1;
-        }
-
-        .main-image:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 40px 80px -12px rgba(99, 102, 241, 0.3);
-        }
-
         /* Button Row */
         .button-row {
             display: flex;
@@ -228,7 +290,7 @@
             gap: 1.5rem;
             margin: 2rem 0;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.8s both;
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
 
         .btn {
@@ -236,8 +298,8 @@
             font-size: 1rem;
             font-weight: 600;
             color: white;
-            background: var(--gradient-primary);
-            border: none;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+            border: 1px solid #333333;
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -249,50 +311,58 @@
             gap: 0.5rem;
             min-width: 180px;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
+            .btn::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+                transition: left 0.5s;
+            }
 
-        .btn:hover::before {
-            left: 100%;
-        }
+            .btn:hover::before {
+                left: 100%;
+            }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
-        }
+            .btn:hover {
+                transform: translateY(-3px);
+                background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+                border-color: #444444;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            }
 
-        .btn:active {
-            transform: translateY(-1px);
-        }
+            .btn:active {
+                transform: translateY(-1px);
+            }
 
         .btn-secondary {
-            background: var(--gradient-secondary);
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+            border: 1px solid #333333;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .btn-secondary:hover {
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-        }
+            .btn-secondary:hover {
+                background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+                border-color: #444444;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            }
 
         .btn-accent {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+            border: 1px solid #333333;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .btn-accent:hover {
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
-        }
+            .btn-accent:hover {
+                background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+                border-color: #444444;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            }
 
         /* Modal Styling */
         .modal {
@@ -302,12 +372,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(10px);
             justify-content: center;
             align-items: center;
             z-index: 1000;
             animation: fadeIn 0.3s ease;
+            padding: 20px;
         }
 
         .modal-content {
@@ -315,8 +386,10 @@
             color: var(--text-primary);
             padding: 2rem;
             border-radius: 20px;
-            width: 90%;
-            max-width: 500px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
             text-align: center;
             position: relative;
             border: 1px solid var(--border-color);
@@ -324,15 +397,15 @@
             animation: slideInUp 0.3s ease;
         }
 
-        .modal-content h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+            .modal-content h2 {
+                font-size: 2rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                background: var(--gradient-primary);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
 
         .close-btn {
             position: absolute;
@@ -351,102 +424,124 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        .close-btn:hover {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.2);
+            .close-btn:hover {
+                color: var(--text-primary);
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+        /* Features Dropdown System */
+        .features-container {
+            max-width: 100%;
+            margin: 0 auto;
         }
 
-        /* Features List */
-        .features-list {
-            list-style: none;
-            padding: 0;
+        .feature-dropdown {
             margin: 1rem 0;
-        }
-
-        .feature-item {
-            margin: 1rem 0;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
             border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
             transition: all 0.3s ease;
-            cursor: help;
+        }
+
+            .feature-dropdown:hover {
+                background: rgba(255, 255, 255, 0.08);
+                border-color: var(--primary-color);
+            }
+
+        .feature-header {
+            padding: 1rem 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            text-align: left;
+            transition: all 0.3s ease;
             position: relative;
         }
 
-        .feature-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateX(5px);
-            border-color: var(--primary-color);
+            .feature-header::before {
+                content: '';
+                width: 12px;
+                height: 12px;
+                border: 2px solid white;
+                border-radius: 50%;
+                background: transparent;
+                transition: all 0.3s ease;
+                box-shadow: none;
+                margin-right: 12px;
+                flex-shrink: 0;
+            }
+
+        .feature-dropdown.active .feature-header::before {
+            background: white;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 16px rgba(255, 255, 255, 0.3);
         }
 
-        .feature-name {
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
+        .feature-header:hover {
+            background: rgba(74, 144, 226, 0.1);
+        }
+
+            .feature-header:hover::before {
+                border-color: rgba(255, 255, 255, 0.8);
+            }
+
+        .feature-header.active {
+            background: rgba(74, 144, 226, 0.2);
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .feature-title {
+            flex: 1;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .feature-icon {
-            width: 20px;
-            height: 20px;
-            background: var(--gradient-primary);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+            color: var(--text-secondary);
+        }
+
+        .feature-dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .feature-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-dropdown.active .feature-content {
+            max-height: 200px;
         }
 
         .feature-description {
-            font-size: 0.9rem;
+            padding: 1rem 1.5rem;
             color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* Tooltip */
-        .tooltip {
-            position: relative;
-        }
-
-        .tooltip .tooltip-text {
-            visibility: hidden;
-            width: 250px;
-            background: var(--darker-bg);
-            color: var(--text-primary);
-            text-align: center;
-            padding: 0.75rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            position: absolute;
-            z-index: 1001;
-            bottom: 125%;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-lg);
-            backdrop-filter: blur(10px);
-        }
-
-        .tooltip .tooltip-text::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: var(--darker-bg) transparent transparent transparent;
-        }
-
-        .tooltip:hover .tooltip-text {
-            visibility: visible;
-            opacity: 1;
-            transform: translateX(-50%) translateY(-5px);
+            line-height: 1.6;
+            font-size: 0.9rem;
+            text-align: left;
         }
 
         /* Payment Section */
@@ -464,9 +559,9 @@
         .payment-btn {
             width: 100%;
             padding: 1rem;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
             color: white;
-            border: none;
+            border: 1px solid #333333;
             border-radius: 12px;
             font-size: 1rem;
             font-weight: 600;
@@ -477,20 +572,26 @@
             justify-content: center;
             gap: 0.5rem;
             text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .payment-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
-        }
+            .payment-btn:hover {
+                transform: translateY(-2px);
+                background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+                border-color: #444444;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            }
 
-        .payment-btn.paypal {
-            background: linear-gradient(135deg, #0070ba 0%, #003087 100%);
-        }
+            .payment-btn.paypal {
+                background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+                border: 1px solid #333333;
+            }
 
-        .payment-btn.paypal:hover {
-            box-shadow: 0 8px 25px rgba(0, 112, 186, 0.4);
-        }
+                .payment-btn.paypal:hover {
+                    background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+                    border-color: #444444;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+                }
 
         .more-text {
             margin-top: 1.5rem;
@@ -501,8 +602,13 @@
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes fadeInUp {
@@ -510,6 +616,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -521,6 +628,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -550,11 +658,22 @@
             .modal-content {
                 margin: 1rem;
                 padding: 1.5rem;
+                max-height: 90vh;
             }
 
-            .tooltip .tooltip-text {
-                width: 200px;
-                font-size: 0.8rem;
+            .tab-button {
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+
+            .feature-header {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .feature-description {
+                padding: 0.8rem 1rem;
+                font-size: 0.85rem;
             }
         }
 
@@ -586,7 +705,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* Status Indicators */
@@ -608,9 +729,17 @@
         }
 
         @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -623,7 +752,7 @@
         <!-- Header -->
         <div class="header">
             <div class="logo">
-                <i class="fas fa-rocket"></i>
+                <img src="https://i.postimg.cc/NF31gK6y/5479ade1-6920-4611-86ea-158ac0afc9ad-removebg-preview.png" alt="Vandal Ext Logo">
             </div>
             <h1 class="title">Vandal Ext</h1>
             <p class="subtitle">Premium Gaming Experience • dsc.gg/vandal1337</p>
@@ -633,8 +762,19 @@
             </div>
         </div>
 
-        <!-- Main Image -->
-        <img id="mainImage" class="main-image" src="https://i.postimg.cc/xTC7hdny/image.png" alt="Vandal Ext Preview">
+        <!-- Tab System -->
+        <div class="tab-system">
+            <div class="tab-header">
+                <button class="tab-button active" onclick="switchTab('combat')">Combat</button>
+                <button class="tab-button" onclick="switchTab('visuals')">Visuals</button>
+            </div>
+            <div class="tab-content active" id="combat-tab">
+                <img src="https://i.postimg.cc/Qdw3k5Q9/image-2.png" alt="Combat Features" class="tab-image">
+            </div>
+            <div class="tab-content" id="visuals-tab">
+                <img src="https://i.postimg.cc/VvfQLF8T/image-3.png" alt="Visual Features" class="tab-image">
+            </div>
+        </div>
 
         <!-- Button Row -->
         <div class="button-row">
@@ -660,64 +800,77 @@
                 <i class="fas fa-times"></i>
             </span>
             <h2>Premium Features</h2>
-            <ul class="features-list">
-                <li class="feature-item tooltip">
-                    <div class="feature-name">
-                        <div class="feature-icon"><i class="fas fa-crosshairs"></i></div>
-                        SilentAim
+            <div class="features-container">
+                <div class="feature-dropdown">
+                    <button class="feature-header" onclick="toggleFeature(this)">
+                        <div class="feature-title">
+                            SilentAim
+                        </div>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div class="feature-content">
+                        <div class="feature-description">
+                            Advanced targeting system that automatically hits enemies without requiring direct aim. Features intelligent prediction algorithms. Perfect for maintaining natural gameplay.
+                        </div>
                     </div>
-                    <div class="feature-description">Advanced targeting system that hits enemies without direct aim</div>
-                    <span class="tooltip-text">Automatically hits targets without aiming directly at them. Uses advanced prediction algorithms for maximum accuracy.</span>
-                </li>
-                <li class="feature-item tooltip">
-                    <div class="feature-name">
-                        <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
-                        Aimbot
+                </div>
+
+                <div class="feature-dropdown">
+                    <button class="feature-header" onclick="toggleFeature(this)">
+                        <div class="feature-title">
+                            Aimbot
+                        </div>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div class="feature-content">
+                        <div class="feature-description">
+                            Precision aim assistance with fully customizable settings. Includes smooth movement, FOV controls, aimpart selection.
+                        </div>
                     </div>
-                    <div class="feature-description">Precision aim assistance with customizable settings</div>
-                    <span class="tooltip-text">Locks your crosshair onto enemies for perfect aim. Features smooth movement and customizable FOV settings.</span>
-                </li>
-                <li class="feature-item tooltip">
-                    <div class="feature-name">
-                        <div class="feature-icon"><i class="fas fa-mouse-pointer"></i></div>
-                        Triggerbot
+                </div>
+
+                <div class="feature-dropdown">
+                    <button class="feature-header" onclick="toggleFeature(this)">
+                        <div class="feature-title">
+                            Triggerbot
+                        </div>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div class="feature-content">
+                        <div class="feature-description">
+                            Automatic shooting system that fires when your crosshair is on target. Configurable delay settings & range settings.
+                        </div>
                     </div>
-                    <div class="feature-description">Automatic shooting when crosshair is on target</div>
-                    <span class="tooltip-text">Shoots automatically when your crosshair is on an enemy. Configurable delay and reaction time settings.</span>
-                </li>
-                <li class="feature-item tooltip">
-                    <div class="feature-name">
-                        <div class="feature-icon"><i class="fas fa-eye"></i></div>
-                        Visuals
+                </div>
+
+                <div class="feature-dropdown">
+                    <button class="feature-header" onclick="toggleFeature(this)">
+                        <div class="feature-title">
+                            Visuals & ESP
+                        </div>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div class="feature-content">
+                        <div class="feature-description">
+                            Visual enchancements including ESP, wallhacks, and advanced overlays. Features player boxes, health bars, distance indicators, weapon information. Customizable colors, transparency settings, and performance optimization options.
+                        </div>
                     </div>
-                    <div class="feature-description">ESP, wallhacks, and advanced overlays</div>
-                    <span class="tooltip-text">ESP, wallhacks, and overlays to see players/items through walls. Includes health bars, distance indicators, and more.</span>
-                </li>
-                <li class="feature-item tooltip">
-                    <div class="feature-name">
-                        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                        Rapidfire (Beta)
+                </div>
+
+                <div class="feature-dropdown">
+                    <button class="feature-header" onclick="toggleFeature(this)">
+                        <div class="feature-title">
+                            Never Get Caught
+                        </div>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </button>
+                    <div class="feature-content">
+                        <div class="feature-description">
+                            Made to completely mask the external overlay, evades SS checks with the hidden cmd. (To use, go to the Settings tab and check "Streamproof")
+                        </div>
                     </div>
-                    <div class="feature-description">Enhanced weapon firing rate with safety features</div>
-                    <span class="tooltip-text">Makes your weapon shoot faster than normal. Includes anti-detection measures and customizable fire rates.</span>
-                </li>
-                <li class="feature-item tooltip">
-                    <div class="feature-name">
-                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                        AntiAim
-                    </div>
-                    <div class="feature-description">Advanced anti-aim protection system</div>
-                    <span class="tooltip-text">Breaks enemy aim and makes you harder to hit. Features multiple protection modes and randomization.</span>
-                </li>
-                <li class="feature-item tooltip">
-                    <div class="feature-name">
-                        <div class="feature-icon"><i class="fas fa-cog"></i></div>
-                        Configurations
-                    </div>
-                    <div class="feature-description">Save and load custom cheat settings</div>
-                    <span class="tooltip-text">Save and load your custom cheat settings. Share configurations with friends and create profiles for different games.</span>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -748,12 +901,41 @@
     </div>
 
     <script>
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Remove active class from all tabs and buttons
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            // Add active class to selected tab and button
+            document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+        }
+
+        // Feature dropdown functionality
+        function toggleFeature(header) {
+            const dropdown = header.parentElement;
+            const isActive = dropdown.classList.contains('active');
+
+            // Close all other dropdowns
+            document.querySelectorAll('.feature-dropdown').forEach(dd => {
+                dd.classList.remove('active');
+                dd.querySelector('.feature-header').classList.remove('active');
+            });
+
+            // Toggle current dropdown
+            if (!isActive) {
+                dropdown.classList.add('active');
+                header.classList.add('active');
+            }
+        }
+
         // Enhanced modal functionality
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
-            
+
             // Add entrance animation
             const content = modal.querySelector('.modal-content');
             content.style.animation = 'slideInUp 0.3s ease';
@@ -766,7 +948,7 @@
         }
 
         // Close modal when clicking outside
-        window.onclick = function(e) {
+        window.onclick = function (e) {
             if (e.target.classList.contains('modal')) {
                 e.target.style.display = 'none';
                 document.body.style.overflow = 'auto';
@@ -774,7 +956,7 @@
         }
 
         // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 const modals = document.querySelectorAll('.modal');
                 modals.forEach(modal => {
@@ -786,23 +968,6 @@
             }
         });
 
-        // Enhanced image interaction
-        const image = document.getElementById('mainImage');
-        const container = document.querySelector('.container');
-
-        container.addEventListener('mousemove', (e) => {
-            const rect = container.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width/2;
-            const y = e.clientY - rect.top - rect.height/2;
-            const moveX = -x * 0.01;
-            const moveY = -y * 0.01;
-            image.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.02)`;
-        });
-
-        container.addEventListener('mouseleave', () => {
-            image.style.transform = 'translate(0,0) scale(1)';
-        });
-
         // Create floating particles
         function createParticle() {
             const particle = document.createElement('div');
@@ -812,13 +977,13 @@
             particle.style.width = particle.style.height = (Math.random() * 3 + 2) + 'px';
             particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
             particle.style.animationDelay = Math.random() * 5 + 's';
-            
+
             // Random colors
-            const colors = ['#6366f1', '#8b5cf6', '#10b981', '#f59e0b'];
+            const colors = ['#4a90e2', '#357abd', '#10b981', '#f59e0b'];
             particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-            
+
             document.body.appendChild(particle);
-            
+
             // Remove particle after animation
             setTimeout(() => {
                 if (particle.parentNode) {
@@ -837,12 +1002,12 @@
 
         // Add loading states to buttons
         document.querySelectorAll('.btn, .payment-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+            btn.addEventListener('click', function (e) {
                 if (this.href && !this.href.includes('#')) {
                     const originalText = this.innerHTML;
                     this.innerHTML = '<div class="loading"></div> Loading...';
                     this.style.pointerEvents = 'none';
-                    
+
                     setTimeout(() => {
                         this.innerHTML = originalText;
                         this.style.pointerEvents = 'auto';
@@ -880,7 +1045,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.header, .main-image, .button-row').forEach(el => {
+        document.querySelectorAll('.header, .button-row, .tab-system').forEach(el => {
             observer.observe(el);
         });
 
