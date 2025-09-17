@@ -3,7 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vandal Ext | Premium Gaming Experience</title>
+    <title>Vandalism | BEST Cheap & Free TOOLS</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vandalism.tools/">
+    <meta property="og:title" content="Vandalism | BEST Cheap & Free TOOLS">
+    <meta property="og:description" content="Vandal External - Premium Roblox External & Vandal Nuker - Free Discord Server Nuker. Get the best gaming tools for cheap!">
+    <meta property="og:image" content="https://i.postimg.cc/NF31gK6y/5479ade1-6920-4611-86ea-158ac0afc9ad-removebg-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Vandalism">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vandalism.tools/">
+    <meta property="twitter:title" content="Vandalism | BEST Cheap & Free TOOLS">
+    <meta property="twitter:description" content="Vandal External - Premium Roblox External & Vandal Nuker - Free Discord Server Nuker. Get the best gaming tools for cheap!">
+    <meta property="twitter:image" content="https://i.postimg.cc/NF31gK6y/5479ade1-6920-4611-86ea-158ac0afc9ad-removebg-preview.png">
+    
+    <!-- Discord Embed -->
+    <meta name="theme-color" content="#60a5fa">
+    <meta name="description" content="Vandal External - Premium Roblox External & Vandal Nuker - Free Discord Server Nuker. Get the best gaming tools for cheap!">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="keywords" content="roblox external, discord nuker, gaming tools, vandal external, vandal nuker, cheap tools, free tools">
+    <meta name="author" content="Vandalism">
+    <meta name="robots" content="index, follow">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
@@ -1197,6 +1224,98 @@ body {
             transform: scale(1);
         }
 
+        /* Product Selection Styles */
+        .product-selection {
+            margin: 2rem 0;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .product-options {
+            display: flex;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 0.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-option {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .product-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .product-option:hover::before {
+            left: 100%;
+        }
+
+        .product-option.active {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.2);
+        }
+
+        .product-option:hover:not(.active) {
+            background: rgba(96, 165, 250, 0.05);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+
+        .product-option i {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-option span {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .product-option small {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        .product-option.active i {
+            color: #60a5fa;
+        }
+
+        .product-option.active small {
+            color: #10b981;
+        }
+
         /* Showcase Toggle Styles */
         .showcase-toggle-container {
             display: flex;
@@ -1291,6 +1410,258 @@ body {
             background: rgba(96, 165, 250, 0.4);
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
         }
+
+        /* Nuker Content Styles */
+        .product-content {
+            transition: all 0.4s ease;
+        }
+
+        .nuker-main-content {
+            padding: 2rem;
+            text-align: center;
+            min-height: 400px;
+        }
+
+        .nuker-header {
+            margin-bottom: 3rem;
+        }
+
+        .additional-features {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.05) 0%, rgba(139, 92, 246, 0.03) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(96, 165, 250, 0.1);
+        }
+
+        .download-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.2);
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.15);
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h4 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-item:hover {
+            transform: translateX(5px);
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+
+        .feature-item i {
+            font-size: 1.2rem;
+            color: #60a5fa;
+            width: 20px;
+        }
+
+        .feature-item span {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .setting-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .setting-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(96, 165, 250, 0.15);
+        }
+
+        .setting-item i {
+            font-size: 1.5rem;
+            color: #60a5fa;
+            width: 30px;
+        }
+
+        .setting-item h4 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .setting-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Download Section Styles */
+        .payment-content {
+            transition: all 0.4s ease;
+        }
+
+        .nuker-download {
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .download-info {
+            margin-bottom: 2rem;
+        }
+
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border: 1px solid #10b981;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1.2rem 2rem;
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .download-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .download-features .feature-item {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+        }
+
+        .download-features .feature-item i {
+            color: #10b981;
+        }
+
+        .download-features .feature-item span {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -1317,7 +1688,24 @@ body {
                 <img src="https://i.postimg.cc/NF31gK6y/5479ade1-6920-4611-86ea-158ac0afc9ad-removebg-preview.png" alt="Vandal Ext Logo">
             </div>
             <h1 class="title">Vandalism</h1>
-            <p class="subtitle scroll-animate">Best CHEAPEST Roblox External • discord.gg/vandal</p>
+            <p class="subtitle scroll-animate">BEST Cheap & Free TOOLS • discord.gg/vandal</p>
+            
+            <!-- Product Selection -->
+            <div class="product-selection scroll-animate">
+                <div class="product-options">
+                    <button class="product-option active" onclick="selectProduct('external')" id="external-btn">
+                        <i class="fas fa-crown"></i>
+                        <span>Vandal External</span>
+                        <small>Premium</small>
+                    </button>
+                    <button class="product-option" onclick="selectProduct('nuker')" id="nuker-btn">
+                        <i class="fas fa-bomb"></i>
+                        <span>Vandal Nuker</span>
+                        <small>Free</small>
+                    </button>
+                </div>
+            </div>
+            
             <div class="status-online scroll-animate">
                 <div class="status-dot"></div>
                 <span>Service Online</span>
@@ -1332,47 +1720,143 @@ body {
         </div>
 
         <!-- Tab System -->
-        <div class="tab-system scroll-animate">
+        <div class="tab-system scroll-animate" id="tab-system">
             <div class="tab-header">
                 <button class="tab-button active" onclick="switchTab('combat')">Combat</button>
                 <button class="tab-button" onclick="switchTab('visuals')">Visuals</button>
                 <button class="tab-button" onclick="switchTab('misc')">Misc</button>
                 <button class="tab-button" onclick="switchTab('settings')">Settings</button>
             </div>
-            <div class="tab-content active" id="combat-tab">
-                <img src="https://i.postimg.cc/wBH7fd4S/Comabt.png" alt="Combat Features" class="tab-image">
+            
+            <!-- Vandal External Content -->
+            <div class="product-content" id="external-content">
+                <div class="tab-content active" id="combat-tab">
+                    <img src="https://i.postimg.cc/wBH7fd4S/Comabt.png" alt="Combat Features" class="tab-image">
+                </div>
+                <div class="tab-content" id="visuals-tab">
+                    <img src="https://i.postimg.cc/9F6499dX/image-4.png" alt="Visual Features" class="tab-image">
+                </div>
+                <div class="tab-content" id="misc-tab">
+                    <img src="https://i.postimg.cc/pLMTrHvp/Misc.png" alt="Misc Features" class="tab-image">
+                </div>
+                <div class="tab-content" id="settings-tab">
+                    <img src="https://i.postimg.cc/5yH0Y9jF/settings.png" alt="Settings" class="tab-image">
+                </div>
+                <div class="tab-content" id="showcase-tab">
+                    <div class="youtube-container">
+                        <div class="youtube-embed">
+                            <iframe 
+                                src="https://www.youtube.com/embed/Zzb_cA_C1SY" 
+                                title="Vandal Ext Showcase" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="tab-content" id="visuals-tab">
-                <img src="https://i.postimg.cc/9F6499dX/image-4.png" alt="Visual Features" class="tab-image">
-            </div>
-            <div class="tab-content" id="misc-tab">
-                <img src="https://i.postimg.cc/pLMTrHvp/Misc.png" alt="Misc Features" class="tab-image">
-            </div>
-            <div class="tab-content" id="settings-tab">
-                <img src="https://i.postimg.cc/5yH0Y9jF/settings.png" alt="Settings" class="tab-image">
-            </div>
-            <div class="tab-content" id="showcase-tab">
-                <div class="youtube-container">
-                    <div class="youtube-embed">
-                        <iframe 
-                            src="https://www.youtube.com/embed/Zzb_cA_C1SY" 
-                            title="Vandal Ext Showcase" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                        </iframe>
+        </div>
+        
+        <!-- Vandal Nuker Content (Outside tab system) -->
+        <div class="product-content" id="nuker-content" style="display: none;">
+            <div class="nuker-main-content">
+                <div class="nuker-header">
+                    <h3 style="color: #60a5fa; margin-bottom: 0.5rem; text-align: center; font-size: 2rem;">Vandal Nuker</h3>
+                    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
+                        Discord server nuker - Free as fuck
+                    </p>
+                </div>
+                
+                <!-- Main Features Grid -->
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-bomb"></i>
+                        <h4>Nuke Server</h4>
+                        <p>Delete all channels, roles, emojis, and webhooks. Fuck up servers completely.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Mass Ban/Kick</h4>
+                        <p>Ban or kick everyone in the server. Clean house real quick.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-comments"></i>
+                        <h4>Spam Channels</h4>
+                        <p>Spam messages to every channel. Flood the server with whatever you want.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-cog"></i>
+                        <h4>Easy to Use</h4>
+                        <p>Just paste your token and click buttons. No brain required.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-edit"></i>
+                        <h4>Create Channels</h4>
+                        <p>Spam create channels with custom names. Fill up the server.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-trash"></i>
+                        <h4>Delete Everything</h4>
+                        <p>Remove all roles, channels, emojis, and more. Leave nothing behind.</p>
+                    </div>
+                </div>
+                
+                <!-- What it actually does -->
+                <div class="additional-features">
+                    <h4 style="color: #60a5fa; margin-bottom: 1.5rem; text-align: center;">What this shit does:</h4>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Nukes entire servers</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Mass bans everyone</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Spams channels</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Creates spam channels</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Deletes all roles</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Removes all emojis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Download Section -->
+                <div class="download-section">
+                    <div class="download-info">
+                        <i class="fas fa-download" style="font-size: 2.5rem; color: #10b981; margin-bottom: 1rem;"></i>
+                        <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Get it now</h4>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                            Free download, no bullshit. Just click and get started.
+                        </p>
+                        <a href="https://workink.net/23pX/ly96tjvl" target="_blank" class="download-btn" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; margin-top: 1rem;">
+                            <i class="fas fa-download"></i>
+                            Download Vandal Nuker
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Button Row -->
-        <div class="button-row scroll-animate">
+        <div class="button-row scroll-animate" id="button-row">
             <button class="btn scroll-animate-left" onclick="openModal('featuresModal')">
                 <i class="fas fa-star"></i>
                 Features
             </button>
-            <a href="https://discord.gg/vandal" target="_blank" class="btn btn-secondary scroll-animate">
+            <a href="https://discord.gg/P8feNZwNmz" target="_blank" class="btn btn-secondary scroll-animate">
                 <i class="fab fa-discord"></i>
                 Join Discord
             </a>
@@ -1470,21 +1954,61 @@ body {
             <span class="close-btn" onclick="closeModal('purchaseModal')">
                 <i class="fas fa-times"></i>
             </span>
-            <h2>Choose Payment Method</h2>
+            <h2 id="purchase-title">Choose Payment Method</h2>
             <div class="payment-section">
-        <div class="payment-buttons">
-                    <button class="payment-btn" onclick="openModal('robuxModal')">
-                        <i class="fas fa-gem"></i>
-                        800 Robux - Premium License
-                    </button>
-                    <a href="https://shoppy.gg/product/6Pno3Le" target="_blank" class="payment-btn paypal">
-                        <i class="fas fa-shopping-cart"></i>
-                        Purchase
-                    </a>
+                <!-- Vandal External Payment -->
+                <div id="external-payment" class="payment-content">
+                    <div class="payment-buttons">
+                        <button class="payment-btn" onclick="openModal('robuxModal')">
+                            <i class="fas fa-gem"></i>
+                            800 Robux - Premium License
+                        </button>
+                        <a href="https://shoppy.gg/product/6Pno3Le" target="_blank" class="payment-btn paypal">
+                            <i class="fas fa-shopping-cart"></i>
+                            Purchase
+                        </a>
+                    </div>
+                    <div class="more-text">
+                        <i class="fas fa-info-circle"></i>
+                        More payment methods coming soon
+                    </div>
                 </div>
-                <div class="more-text">
-                    <i class="fas fa-info-circle"></i>
-                    More payment methods coming soon
+                
+                <!-- Vandal Nuker Download -->
+                <div id="nuker-payment" class="payment-content" style="display: none;">
+                    <div class="nuker-download">
+                        <div class="download-info">
+                            <i class="fas fa-download" style="font-size: 3rem; color: #60a5fa; margin-bottom: 1rem;"></i>
+                            <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Vandal Nuker - Free Download</h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                                Get instant access to Vandal Nuker completely free! No payment required.
+                            </p>
+                        </div>
+                        <div class="download-buttons">
+                            <button class="payment-btn download-btn" onclick="downloadNuker()">
+                                <i class="fas fa-download"></i>
+                                Download Now
+                            </button>
+                            <a href="https://discord.gg/P8feNZwNmz" target="_blank" class="payment-btn">
+                                <i class="fab fa-discord"></i>
+                                Join Discord
+                            </a>
+                        </div>
+                        <div class="download-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>100% Free</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>No Registration Required</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Instant Download</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
         </div>
     </div>
@@ -1590,20 +2114,29 @@ body {
             });
         }
 
-        // Tab switching functionality
+        // Tab switching functionality (only for external product)
         function switchTab(tabName) {
+            // Only handle tabs if external product is selected
+            if (currentProduct !== 'external') {
+                return;
+            }
+            
             // Remove active class from all tabs and buttons
             document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => {
+            document.querySelectorAll('#external-content .tab-content').forEach(content => {
                 content.classList.remove('active');
                 content.style.display = 'none';
             });
-
+            
             // Add active class to selected tab and button
-            document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
+            if (document.querySelector(`[onclick="switchTab('${tabName}')"]`)) {
+                document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
+            }
             const activeTab = document.getElementById(`${tabName}-tab`);
-            activeTab.classList.add('active');
-            activeTab.style.display = 'block';
+            if (activeTab) {
+                activeTab.classList.add('active');
+                activeTab.style.display = 'block';
+            }
         }
 
         // Feature dropdown functionality
@@ -1763,10 +2296,78 @@ function closeModal(modalId) {
         // Optimize scroll performance
         window.addEventListener('scroll', updateAnimations, { passive: true });
 
+        // Product selection functionality
+        let currentProduct = 'external';
+
+        function selectProduct(product) {
+            currentProduct = product;
+            console.log('Switching to product:', product);
+            
+            // Update product buttons
+            document.querySelectorAll('.product-option').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(product + '-btn').classList.add('active');
+            
+            // Show/hide tab system based on product
+            const tabSystem = document.getElementById('tab-system');
+            const buttonRow = document.getElementById('button-row');
+            const showcaseToggle = document.querySelector('.showcase-toggle-container');
+            
+            if (product === 'external') {
+                tabSystem.style.display = 'block';
+                buttonRow.style.display = 'flex';
+                showcaseToggle.style.display = 'flex';
+                // Reset tabs to first tab for external
+                switchTab('combat');
+            } else {
+                tabSystem.style.display = 'none';
+                buttonRow.style.display = 'none';
+                showcaseToggle.style.display = 'none';
+            }
+            
+            // Update product content
+            document.querySelectorAll('.product-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            const targetContent = document.getElementById(product + '-content');
+            if (targetContent) {
+                targetContent.style.display = 'block';
+                console.log('Showing content for:', product);
+            } else {
+                console.error('Could not find content for:', product);
+            }
+            
+            // Update purchase modal
+            updatePurchaseModal(product);
+        }
+
+        function updatePurchaseModal(product) {
+            const title = document.getElementById('purchase-title');
+            const externalPayment = document.getElementById('external-payment');
+            const nukerPayment = document.getElementById('nuker-payment');
+            
+            if (product === 'external') {
+                title.textContent = 'Choose Payment Method';
+                externalPayment.style.display = 'block';
+                nukerPayment.style.display = 'none';
+            } else {
+                title.textContent = 'Download Vandal Nuker';
+                externalPayment.style.display = 'none';
+                nukerPayment.style.display = 'block';
+            }
+        }
+
+        function downloadNuker() {
+            // Redirect to the actual download link
+            window.open('https://workink.net/23pX/ly96tjvl', '_blank');
+        }
+
         // Showcase toggle functionality
         function toggleShowcase() {
             const toggle = document.getElementById('showcaseToggle');
             const showcaseTab = document.getElementById('showcase-tab');
+            const tabSystem = document.getElementById('tab-system');
             
             if (toggle.checked) {
                 // Show showcase
@@ -1794,10 +2395,13 @@ function closeModal(modalId) {
                         tab.classList.remove('active');
                     }
                 });
-                // Show combat tab and make it active
-                document.getElementById('combat-tab').style.display = 'block';
-                document.getElementById('combat-tab').classList.add('active');
-                document.querySelector('[onclick="switchTab(\'combat\')"]').classList.add('active');
+                // Show appropriate content based on current product
+                if (currentProduct === 'external') {
+                    tabSystem.style.display = 'block';
+                    switchTab('combat');
+                } else {
+                    tabSystem.style.display = 'none';
+                }
             }
         }
     </script>
